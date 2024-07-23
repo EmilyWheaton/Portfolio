@@ -5,8 +5,8 @@
 #### Technical Skills: Python, SQL, Databricks, Azure
 
 ## Education						       		
-- M.S., Data Analytics for Business Intelligence	| University of Leicester (_September 2017_)	 			        		
-- B.Sc Hons., Mathematics (with 1 year placement) | Oxford Brookes University (_May 2016_)
+- MSc, Data Analytics for Business Intelligence	| University of Leicester (_September 2017_)	 			        		
+- BSc Hons, Mathematics (with 1 year placement) | Oxford Brookes University (_May 2016_)
 
 ## Work Experience
 **Senior Data Scientist @ Hitachi Digital Services (Previously Hitachi Vantara) (_January 2022 - Present_)**
@@ -28,5 +28,5 @@
 - AI Enabled Connected Care at HPN North 2023, HPN South 2024
 - GenAI in Retail hosted by Hitachi Digital Services
 - GenAI in Banking Financial Services hosted by Hitachi Digital Services
-- [Introduction into Sklearn Pipelines](https://www.youtube.com/watch?v=N-M2arnaf-Y)) Women In Data Science Workshop
+- [Introduction into Sklearn Pipelines](https://www.youtube.com/watch?v=N-M2arnaf-Y) Women In Data Science Workshop
 - [Data Science in Healthcare WiDS](https://www.youtube.com/watch?v=U4UOlJzSajM) Workshop Women In Data Science Workshop
