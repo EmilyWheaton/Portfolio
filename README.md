@@ -8,7 +8,7 @@
 
 ## Experience
 **TechWomen100 Winner 2023**
-Recipient of the prestigious TechWomen100 Individual award in 2023, recognized by WeAreTechWomen for outstanding contributions to the field of technology, showcasing excellence and leadership in the industry
+- Recipient of the prestigious TechWomen100 Individual award in 2023, recognized by WeAreTechWomen for outstanding contributions to the field of technology, showcasing excellence and leadership in the industry
 
 **Senior Data Scientist @ Hitachi Digital Services (Previously Hitachi Vantara) (_January 2022 - Present_)**
 - Lead Data Scientist on a large Healthcare Project, driving the development of cutting-edge models to address critical customer need, which led to >20% reduction in Average Length Of Stay (a key metric at the hospital) in Pilot wards.
