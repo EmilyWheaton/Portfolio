@@ -6,6 +6,10 @@
 - MSc, Data Analytics for Business Intelligence	| University of Leicester (_September 2017_)	 			        		
 - BSc Hons, Mathematics (with 1 year placement) | Oxford Brookes University (_May 2016_)
 
+## Projects
+### Alzheimer’s Disease Neuroimaging Initiative (ADNI)
+- [Exploratory Data Analysis](ADNI/EDA.ipynb) 
+
 ## Experience
 **TechWomen100 Winner 2023**
 - Recipient of the prestigious TechWomen100 Individual award in 2023, recognized by WeAreTechWomen for outstanding contributions to the field of technology, showcasing excellence and leadership in the industry
