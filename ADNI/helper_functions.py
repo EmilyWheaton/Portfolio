@@ -492,3 +492,74 @@ def plot_kde_only(columns, dist_groups, labels):
 
     plt.tight_layout()
     plt.show()
+
+
+def identify_and_report_duplicates(df):
+    """Identify and report patients with duplicate Month entries."""
+    dup_visits = df.groupby(['RID', 'Month']).size().reset_index(name='count')
+    dup_visits = dup_visits[dup_visits['count'] > 1]
+    dup_visits_rid = dup_visits['RID'].unique()
+    print(f'{len(dup_visits_rid)} Patients with double Month entries')
+    return df
+
+
+def rank_and_deduplicate(df):
+    """Rank entries within each RID and Month and remove duplicates."""
+    df['rn'] = df.groupby(['RID', 'Month'])['DX'].rank(method='first', ascending=True)
+    df = df[df['rn'] == 1].drop(columns=['rn']).reset_index(drop=True)
+    return df
+
+
+def expand_months(df):
+    """Expand months for each RID and fill in missing intervals."""
+    dataframes = []
+
+    rids = df['RID'].unique()
+    for rid in rids:
+        rid_df = df[df['RID'] == rid]
+        min_month = rid_df['Month'].min()
+        max_month = rid_df['Month'].max()
+
+        all_months = pd.DataFrame({
+            'Month': range(min_month, max_month + 1, 6)
+        })
+        all_months['RID'] = rid
+
+        merged_df = pd.merge(all_months, rid_df, on=['RID', 'Month'], how='left')
+        dataframes.append(merged_df)
+
+    expanded_df = pd.concat(dataframes, ignore_index=True)
+    result_df = expanded_df.sort_values(by=['RID', 'Month']).reset_index(drop=True)
+
+    return result_df
+
+def shift_diagnoses(df):
+    """Add shifted diagnosis columns."""
+    df['DX6M'] = df.groupby('RID')['DX'].shift(-1)
+    df['DX12M'] = df.groupby('RID')['DX'].shift(-2)
+    df['DX24M'] = df.groupby('RID')['DX'].shift(-4)
+    return df
+
+def fill_missing_values(df):
+    """Forward fill and then replace remaining missing values with 'DNA'."""
+    columns_to_fill = ['DX6M', 'DX12M', 'DX24M']
+    df[columns_to_fill] = df[columns_to_fill].fillna(method='ffill').fillna('DNA')
+    return df
+
+def prepare_target_columns(df):
+    """Drop rows where 'PTID' is NA."""
+    df = expand_months(df)
+    df = shift_diagnoses(df)
+    df = fill_missing_values(df)
+    return df.dropna(subset=['PTID'])
+
+def calculate_deltas(df):
+    """Calculate delta columns for various metrics."""
+    df['CDRSB_delta'] = df.CDRSB - df.CDRSB_bl
+    df['ADAS11_delta'] = df.ADAS11 - df.ADAS11_bl
+    df['ADAS13_delta'] = df.ADAS13 - df.ADAS13_bl
+    df['MMSE_delta'] = df.MMSE - df.MMSE_bl
+    df['RAVLT_delta'] = df.RAVLT_immediate - df.RAVLT_immediate_bl
+    return df
+
+
