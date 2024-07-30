@@ -8,7 +8,7 @@
 
 ## Projects
 ### Alzheimer’s Disease Neuroimaging Initiative (ADNI)
-- [Exploratory Data Analysis](ADNI/EDA.html) 
+- [Exploratory Data Analysis](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/EDA.ipynb) 
 - [First Draft Modelling](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/01_first_draft_modeling.ipynb) 
 
 ## Experience
