@@ -7,9 +7,10 @@
 - BSc Hons, Mathematics (with 1 year placement) | Oxford Brookes University (_May 2016_)
 
 ## Projects
-### Alzheimer’s Disease Neuroimaging Initiative (ADNI)
+Thank you for visiting my portfolio. I have just begun curating and showcasing my work here, and I am excited to share more with you in the near future. Please stay tuned as I will be continuously updating and expanding this space with additional projects and achievements. Your patience and interest are greatly appreciated.
+### Alzheimer’s Disease Neuroimaging Initiative (ADNI) 
 - [Exploratory Data Analysis](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/EDA.ipynb) 
-- [First Draft Modelling](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/01_first_draft_modeling.ipynb) 
+
 
 ## Experience
 **TechWomen100 Winner 2023**
