@@ -3,6 +3,8 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import math 
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.metrics import confusion_matrix
 
 def get_random_patient_sample(df, patient_col, num_samples):
     """
@@ -563,3 +565,46 @@ def calculate_deltas(df):
     return df
 
 
+def retrieve_feature_names(preprocessor):
+    feature_names = []
+    for name, transformer, columns in preprocessor.transformers_:
+        if isinstance(transformer, OneHotEncoder):
+            feature_names.extend(transformer.get_feature_names_out(input_features=columns))
+        elif hasattr(transformer, 'get_feature_names_out'):
+            feature_names.extend(transformer.get_feature_names_out(input_features=columns))
+    return feature_names
+
+
+def plot_feature_importances(models, model_name):
+    model = models[model_name]
+    base_classifiers = model['classifier'].estimators_
+    preprocessor = model['preprocessor']
+    feature_names = retrieve_feature_names(preprocessor)
+    for i, clf in enumerate(base_classifiers):
+        if hasattr(clf, 'feature_importances_'):
+            importances = clf.feature_importances_
+            importances_df = pd.DataFrame({
+                'Feature': feature_names,
+                'Importance': importances
+            }).sort_values(by='Importance', ascending=False)
+                
+            importances_df = importances_df[importances_df['Importance'] > 0]
+
+            plt.figure(figsize=(15, 15))
+            plt.barh(importances_df['Feature'], importances_df['Importance'], color='skyblue')
+            plt.xlabel('Importance')
+            plt.title(f'{model_name} - Feature Importance for Target {i}')
+            plt.gca().invert_yaxis()
+            plt.show()
+        else:
+            print(f'No feature importances for {model_name} - Target {i}')
+            
+
+def plot_confusion_matrix(y_true, y_pred, labels, title):
+    cm = confusion_matrix(y_true, y_pred, labels=labels)
+    plt.figure(figsize=(10, 7))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', xticklabels=labels, yticklabels=labels)
+    plt.title(title)
+    plt.xlabel('Predicted Labels')
+    plt.ylabel('True Labels')
+    plt.show()
