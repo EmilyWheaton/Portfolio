@@ -11,7 +11,7 @@ Thank you for visiting my portfolio. I have just begun curating and showcasing m
 ### Alzheimer’s Disease Neuroimaging Initiative (ADNI) 
 - [Exploratory Data Analysis](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/EDA.ipynb) 
 - [Data Preparation](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/01_prepare.ipynb) 
-- [Inital model comparison](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/02_model.ipynb) 
+- [Initial model comparison](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/02_model.ipynb) 
 
 
 ## Experience
