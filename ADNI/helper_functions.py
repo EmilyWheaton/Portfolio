@@ -575,8 +575,11 @@ def retrieve_feature_names(preprocessor):
     return feature_names
 
 
-def plot_feature_importances(models, model_name):
-    model = models[model_name]
+def plot_feature_importances(models, model_name=None):
+    if model_name:
+        model = models[model_name]
+    else:
+        model =  models
     base_classifiers = model['classifier'].estimators_
     preprocessor = model['preprocessor']
     feature_names = retrieve_feature_names(preprocessor)
