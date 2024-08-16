@@ -12,6 +12,7 @@ Thank you for visiting my portfolio. I have just begun curating and showcasing m
 - [Exploratory Data Analysis](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/EDA.ipynb) 
 - [Data Preparation](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/01_prepare.ipynb) 
 - [Initial model comparison](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/02_model.ipynb) 
+- [Hyperparameter Tuning](https://nbviewer.jupyter.org/github/EmilyWheaton/Portfolio/blob/main/ADNI/03_tune.ipynb) 
 
 
 ## Experience
